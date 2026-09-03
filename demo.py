@@ -1,17 +1,7 @@
-from roundup.logger import logging
-from roundup.exception import RoundupException
-import sys
+from roundup.pipeline.training_pipeline import TrainingPipeline
 
-try:
-    r = 1 / 0
-    print(r)
+pipeline = TrainingPipeline()
+pipeline.run_pipeline()
 
-except Exception as e:
-    logging.error("An error occurred: %s", e)
 
-else:
-    logging.info("Code executed successfully.")
-
-finally:
-    logging.info("Execution completed.")
 
