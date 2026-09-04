@@ -1,0 +1,65 @@
+columns:
+  - txn_id: category
+  - user_id: category
+  - timestamp: category
+  - txn_amount: int
+  - category: category
+  - transaction_hour: int
+  - is_weekend: int
+  - hour_sin: float
+  - hour_cos: float
+  - txn_count_today: int
+  - daily_total_spent: float
+  - remaining_daily_capacity: float
+  - txn_count_prev_7d: int
+  - avg_spend_last_7days: float
+  - spending_velocity_ratio: float
+  - income_tier: category
+  - user_tenure_days: int
+  - is_new_user: int
+  - pressure_score: float
+  - monthly_savings_so_far: int
+  - user_savings_streak: int
+  - days_since_last_txn: int
+  - clean_number_tier: int
+  - rounded_amount: int
+  - roundup_amount: int
+
+
+numerical_columns:
+  - txn_amount
+  - transaction_hour
+  - is_weekend
+  - hour_sin
+  - hour_cos
+  - txn_count_today
+  - daily_total_spent
+  - remaining_daily_capacity
+  - txn_count_prev_7d
+  - avg_spend_last_7days
+  - spending_velocity_ratio
+  - user_tenure_days
+  - is_new_user
+  - pressure_score
+  - monthly_savings_so_far
+  - user_savings_streak
+  - days_since_last_txn
+  - clean_number_tier
+  - rounded_amount
+  - roundup_amount
+
+categorical_columns:
+  - txn_id
+  - user_id
+  - timestamp
+  - category
+  - income_tier
+
+drop_columns:
+  - clean_number_tier
+  - rounded_amount
+
+drop_for_modeling:       # not leakage — just non-predictive identifiers, still validated above
+  - txn_id
+  - user_id
+  - timestamp

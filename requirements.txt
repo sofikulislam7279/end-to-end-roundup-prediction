@@ -1,5 +1,5 @@
 pandas 
-numpy
+numpy<2.0
 matplotlib
 plotly
 seaborn
@@ -25,5 +25,5 @@ boto3
 mypy-boto3-s3
 neuro_mf
 jinja2
-evidently
+evidently==0.4.25
 -e .
