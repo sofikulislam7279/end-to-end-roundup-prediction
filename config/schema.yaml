@@ -56,10 +56,35 @@ categorical_columns:
   - income_tier
 
 drop_columns:
-  - clean_number_tier
-  - rounded_amount
-
-drop_for_modeling:       # not leakage — just non-predictive identifiers, still validated above
   - txn_id
   - user_id
   - timestamp
+  - clean_number_tier
+  - rounded_amount
+
+
+# for data transformation
+num_features:
+  - txn_amount
+  - transaction_hour
+  - is_weekend
+  - hour_sin
+  - hour_cos
+  - txn_count_today
+  - daily_total_spent
+  - remaining_daily_capacity
+  - txn_count_prev_7d
+  - avg_spend_last_7days
+  - spending_velocity_ratio
+  - user_tenure_days
+  - is_new_user
+  - pressure_score
+  - monthly_savings_so_far
+  - user_savings_streak
+  - days_since_last_txn
+
+oh_columns:
+ - category
+ - income_tier
+
+
